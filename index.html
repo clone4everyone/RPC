@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK PAPER SCISOR GAME</title>
+    <style>
+        .reset{
+            vertical-align: top;
+            margin-left: 40px;
+            height:80px;
+            width:80px;
+            border-radius:40px;
+            background-color: red;
+            color:white;
+        }
+        .reset:hover{
+            color:red;
+            background-color: blueviolet;
+        }
+        body {
+            background-color: black;
+        }
+
+        .img1 {
+
+            height: 100px;
+            width: 100px;
+            position: relative;
+            right: 8px;
+            top: -3px;
+            border-radius: 50px;
+        }
+
+        .button1 {
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+
+        }
+
+        .button1:hover {
+            box-shadow: 1px 1px 10px 10px rgba(255, 200, 0, 0.639);
+            cursor: pointer;
+        }
+
+        .img2 {
+
+            height: 100px;
+            width: 100px;
+            position: relative;
+            right: 8px;
+            top: -3px;
+            border-radius: 50px;
+        }
+
+        .button2 {
+            margin-left: 30px;
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+        }
+
+        .button2:hover {
+            box-shadow: 1px 1px 10px 10px rgba(255, 0, 0, 0.464);
+            cursor: pointer;
+        }
+
+        .img3 {
+
+            height: 100px;
+            width: 100px;
+            position: relative;
+            right: 8px;
+            top: -3px;
+            border-radius: 50px;
+        }
+
+        .button3 {
+            margin-left: 30px;
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+        }
+
+        .button3:hover {
+            box-shadow: 1px 1px 10px 10px rgba(0, 0, 255, 0.461);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>ROCK PAPER scissors</p>
+    <button class="button1" onclick="
+
+play(`rock`);
+
+
+"> <img class="img1" src="img/images (1).jpeg"></button>
+
+
+
+    <button class="button2" onclick="
+play(`paper`);
+
+
+"><img class="img2" src="img/download.jpeg"></button>
+
+
+    <button class="button3" onclick="
+
+play(`scissors`);
+"><img class="img3" src="img/scissors.webp"></button>
+
+<button class="reset" onclick="
+
+res.win=0;
+ res.loss=0;
+res.tie=0;
+localStorage.removeItem(`res`);
+">
+    RESET
+</button>
+
+    <script>
+          let res=JSON.parse(localStorage.getItem
+          (`res`));
+         if(res===null)
+         {
+            res={
+         win:0,
+         loss:0,
+         tie:0
+
+            };
+            
+         }
+          
+        var computerM = '';
+ var result=``;
+        function play(playermove) {
+            call();
+            if (playermove === `scissors`) {
+                if ('scissors' === computerM) {
+                    result=`tie`;
+                  
+                }
+                else if (computerM === 'rock') {
+                    result=`loss`;
+                    
+                }
+                else if (computerM === 'paper') {
+                    result=`win`;
+                   
+                }
+            }
+
+            if (playermove === `paper`) {
+                if ('paper' === computerM) {
+                    result=`tie`;
+                   
+                }
+                else if (computerM === 'scissors') {
+                    result=`loss`;
+                   
+                }
+                else if (computerM === 'rock') {
+                    result=`win`;
+                  
+                }
+
+
+            }
+
+
+            if (playermove === `rock`) {
+                if ('rock' === computerM) {
+                    result=`tie`;
+                    
+                }
+                else if (computerM === 'paper') {
+                    result=`loss`;
+                   
+                }
+                else if (computerM === 'scissors') {
+                    result=`win`;
+                   
+                }
+            }
+            if(playermove===`reset`)
+            {
+                result=`reset`;
+            }
+           
+          
+            if(result===`win`){
+                res.win+=1;
+
+            }else if(result===`loss`){
+                res.loss+=1;
+
+            }else if(result===`tie`){
+                res.tie+=1;
+            }
+
+        localStorage.setItem('res',JSON.stringify(res));
+
+           alert(`you picked ${playermove} computer chooose ${computerM}  ${result}
+            wins: ${res.win} loss: ${res.loss} tie: ${res.tie}`);
+           
+
+
+        }
+
+        function call() {
+            var random = Math.random();
+
+            if (random >= 0 && random < 1 / 3) {
+
+                computerM = 'rock';
+            }
+            else if (random >= 1 / 3 && random < 2 / 3) {
+                computerM = 'paper';
+            }
+            else if (random >= 2 / 3 && random < 1) {
+                computerM = 'scissors';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
