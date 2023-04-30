@@ -7,24 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROCK PAPER SCISOR GAME</title>
     <style>
-      
-        .reset{
+        .reset {
             vertical-align: top;
             margin-left: 40px;
-            height:80px;
-            width:80px;
-            border-radius:40px;
+            height: 80px;
+            width: 80px;
+            border-radius: 40px;
             background-color: red;
-            color:white;
-            position:absolute;
-            top:70%;
-            left:10%
+            color: white;
+            position: absolute;
+            top: 70%;
+            left: 10%
         }
-        .reset:hover{
-            color:red;
+
+        .reset:hover {
+            color: red;
             background-color: blueviolet;
         }
-       
+
 
         .img1 {
 
@@ -92,77 +92,84 @@
             cursor: pointer;
         }
 
-        body{
+        body {
             background-color: black;
         }
-        .show{
-           position: relative;
-           right:40px;
-            display:inline-block;
-            color:yellowgreen;
-            font-style:bold;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 100;
-            font-size: 25px;
-        }
-      .preview-computer{
-        margin-left:30%;
-        margin-top:70px;
-        color:orangered;
-        font-style: italic;
-        font-size: 50px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      }
-       
-        .resul{
-          display: inline-block;
-            color:red;
+
+        .show {
             position: relative;
-            top:-90px;
-            left:90px;
-            color:yellowgreen;
-            font-style:bold;
+            right: 40px;
+          top:20px;
+            display: inline-block;
+            color: yellowgreen;
+            font-style: bold;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: 100;
             font-size: 25px;
-            
         }
-        .preview{
-            margin-left:30%;
-        margin-top:70px;
-        color:orangered;
-        font-style: italic;
-        font-size: 50px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-           
+
+        .preview-computer {
+            margin-left: 30%;
+            margin-top: 70px;
+            color: orangered;
+            font-style: italic;
+            font-size: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
-        .player-side{
-            color:rgb(182, 110, 16)
+
+        .resul {
+            display: inline-block;
+            color: red;
+            position: relative;
+            top: -20px;
+            left:80px;
+            color: yellowgreen;
+            font-style: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 100;
+            font-size: 25px;
+
         }
-        .player{
-border-style: solid;
-display:inline-block;
-height:550px;
-width:500px;
-box-shadow: 5px 5px 5px rgb(255, 0, 17);
+
+        .preview {
+            margin-left: 30%;
+            margin-top: 70px;
+            color: orangered;
+            font-style: italic;
+            font-size: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
         }
-        .computer{
+
+        .player-side {
+            color: rgb(182, 110, 16)
+        }
+
+        .player {
+            border-style: solid;
+            display: inline-block;
+            height: 550px;
+            width: 500px;
+            box-shadow: 5px 5px 5px rgb(255, 0, 17);
+        }
+
+        .computer {
             box-shadow: 5px 5px 5px 5px rgb(255, 0, 17);
             display: inline-block;
             border-style: solid;
-        vertical-align: top;
-          width:400px;
-          height:550px;
+            vertical-align: top;
+            width: 400px;
+            height: 550px;
         }
-       
     </style>
 </head>
 
 <body>
-    <div class="player">
-        <h1 class="player-side">PLAYER</h1>
-    <p>ROCK PAPER scissors</p>
-    <button class="button1" onclick="
+    
+        <div class="player">
+            <h1 class="player-side">PLAYER</h1>
+            <p>ROCK PAPER scissors</p>
+            <button class="button1" onclick="
 
 play(`rock`);
 
@@ -171,21 +178,21 @@ play(`rock`);
 
 
 
-    <button class="button2" onclick="
+            <button class="button2" onclick="
 play(`paper`);
 
 
 "><img class="img2" src="img/download.jpeg"></button>
 
 
-    <button class="button3" onclick="
+            <button class="button3" onclick="
 
 play(`scissors`);
 "><img class="img3" src="img/scissors.webp"></button>
 
 
 
-<button class="reset" onclick="
+            <button class="reset" onclick="
 
 res.win=0;
  res.loss=0;
@@ -193,102 +200,95 @@ res.tie=0;
 localStorage.removeItem(`res`);
 sshow();
 ">
-    RESET
-</button>
+                RESET
+            </button>
 
 
-<p class="preview">
+            <p class="preview">
 
-</p>
-</div>
-<p class="resul">
+            </p>
+        </div>
+        <p class="resul">
 
-</p>
-<p class="show" ></p>
-
-
-</div>
-
-<div class="computer">
-    <h1 class="player-side">COMPUTER</h1>
-    <p>ROCK PAPER scissors</p>
-    <button class="button1" > <img class="img1" src="img/images (1).jpeg">
-    </button>
+        </p>
+        <p class="show"></p>
 
 
+    </div>
 
-    <button class="button2" >
-        <img class="img2" src="img/download.jpeg">
-    </button>
-
-
-    <button class="button3">
-        <img class="img3" src="img/scissors.webp">
-    </button>
-
-    <p class="preview-computer">
-
-    </p>
+    <div class="computer">
+        <h1 class="player-side">COMPUTER</h1>
+        <p>ROCK PAPER scissors</p>
+        <button class="button1"> <img class="img1" src="img/images (1).jpeg">
+        </button>
 
 
 
+        <button class="button2">
+            <img class="img2" src="img/download.jpeg">
+        </button>
 
 
+        <button class="button3">
+            <img class="img3" src="img/scissors.webp">
+        </button>
 
-</div>
+        <p class="preview-computer">
+
+        </p>
+    </div>
     <script>
-          let res=JSON.parse(localStorage.getItem
-          (`res`));
-         if(res===null)
-         {
-            res={
-         win:0,
-         loss:0,
-         tie:0
+        let res = JSON.parse(localStorage.getItem
+            (`res`));
+        if (res === null) {
+            res = {
+                win: 0,
+                loss: 0,
+                tie: 0
 
             };
-            
-         }
 
-        
-         function sshow(){
-     
- document.querySelector('.show').innerHTML=` wins: ${res.win} loss: ${res.loss} tie: ${res.tie}`;
-         }
-          
+        }
+
+
+        function sshow() {
+
+            document.querySelector('.show').innerHTML = ` wins: ${res.win} loss: ${res.loss} tie: ${res.tie}`;
+        }
+
         var computerM = '';
- var result=``;
+        var result = ``;
         function play(playermove) {
             call();
             if (playermove === `scissors`) {
                 if ('scissors' === computerM) {
-                    result=`game tie`;
-                  
+                    result = `game tie`;
+
                 }
                 else if (computerM === 'rock') {
-                    result=`you loss`;
-                    
+                    result = `you loss`;
+
                 }
                 else if (computerM === 'paper') {
-                    result=`you win`;
-                   
+                    result = `you win`;
+
                 }
 
-       
+
             }
 
             if (playermove === `paper`) {
                 if ('paper' === computerM) {
-                    result=`game tie`;
-                   
+                    result = `game tie`;
+
                 }
                 else if (computerM === 'scissors') {
-                    result=`you loss`;
-                   
+                    result = `you loss`;
+
                 }
                 else if (computerM === 'rock') {
-                    result=`you win`;
-                  
+                    result = `you win`;
+
                 }
 
 
@@ -297,51 +297,50 @@ sshow();
 
             if (playermove === `rock`) {
                 if ('rock' === computerM) {
-                    result=`game tie`;
-                    
+                    result = `game tie`;
+
                 }
                 else if (computerM === 'paper') {
-                    result=`you loss`;
-                   
+                    result = `you loss`;
+
                 }
                 else if (computerM === 'scissors') {
-                    result=`you win`;
-                   
+                    result = `you win`;
+
                 }
             }
-            if(playermove===`reset`)
-            {
-                result=`reset`;
-            }
-           
-          
-            if(result===`you win`){
-                res.win+=1;
-
-            }else if(result===`you loss`){
-                res.loss+=1;
-
-            }else if(result===`game tie`){
-                res.tie+=1;
+            if (playermove === `reset`) {
+                result = `reset`;
             }
 
-         
- 
-          
 
-        localStorage.setItem('res',JSON.stringify(res));
+            if (result === `you win`) {
+                res.win += 1;
 
-     
+            } else if (result === `you loss`) {
+                res.loss += 1;
 
-           
+            } else if (result === `game tie`) {
+                res.tie += 1;
+            }
 
-            document.querySelector(`.resul`).innerHTML=`${result}`;
 
-            document.querySelector(`.preview`).innerHTML=` ${playermove} `;
+
+
+
+            localStorage.setItem('res', JSON.stringify(res));
+
+
+
+
+
+            document.querySelector(`.resul`).innerHTML = `${result}`;
+
+            document.querySelector(`.preview`).innerHTML = ` ${playermove} `;
             sshow();
 
-            document.querySelector(`.preview-computer`).innerHTML=`${computerM}`;
-            
+            document.querySelector(`.preview-computer`).innerHTML = `${computerM}`;
+
         }
 
         function call() {
