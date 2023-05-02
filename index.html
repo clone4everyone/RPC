@@ -9,15 +9,15 @@
     <style>
         .reset {
             vertical-align: top;
-            margin-left: 40px;
+            margin-left: 10px;
+            ;
             height: 80px;
             width: 80px;
             border-radius: 40px;
             background-color: red;
             color: white;
-            position: absolute;
-            top: 70%;
-            left: 10%
+
+
         }
 
         .reset:hover {
@@ -99,7 +99,7 @@
         .show {
             position: relative;
             right: 40px;
-          top:20px;
+            top: 20px;
             display: inline-block;
             color: yellowgreen;
             font-style: bold;
@@ -122,7 +122,7 @@
             color: red;
             position: relative;
             top: -20px;
-            left:80px;
+            left: 80px;
             color: yellowgreen;
             font-style: bold;
             font-family: Arial, Helvetica, sans-serif;
@@ -149,9 +149,10 @@
             border-style: solid;
             display: inline-block;
             height: 550px;
-            width: 500px;
+            width: 400px;
             box-shadow: 5px 5px 5px rgb(255, 0, 17);
         }
+
 
         .computer {
             box-shadow: 5px 5px 5px 5px rgb(255, 0, 17);
@@ -161,15 +162,138 @@
             width: 400px;
             height: 550px;
         }
+
+       
+
+        @media screen and (max-width:600px) {
+            .computer{
+                width: 100px;
+                border-color: brown;
+                border-style: solid;
+                margin-left: 8px;
+            }
+
+            .player {
+            border-style: solid;
+            display: inline-block;
+            height: 550px;
+            width: 100px;
+            box-shadow: 5px 5px 5px rgb(255, 0, 17);
+        }
+
+        .preview-computer {
+            margin-left: 30%;
+            margin-top: 70px;
+            color: orangered;
+            font-style: italic;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .resul {
+            display: inline-block;
+            color: red;
+            position: relative;
+            top: -20px;
+            left: 10px;
+            color: yellowgreen;
+            font-style: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 100;
+            font-size: 15px;
+
+        }
+
+        .show {
+            position: relative;
+            right: 30px;
+            top: 20px;
+            display: inline-block;
+            color: yellowgreen;
+            font-style: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 100;
+            font-size: 0px;
+          
+        }
+
+        .preview {
+            margin-left: 10%;
+            margin-top: 70px;
+            color: orangered;
+            font-style: italic;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        .reset {
+            vertical-align: top;
+            margin-left: 10px;
+            ;
+            height: 40px;
+            width: 40px;
+            border-radius: 40px;
+           font-size: 8px;
+
+
+        }
+            .img1 {
+
+            height: 50px;
+            width: 50px;
+            position: relative;
+            right: 8px;
+            top: -3px;
+            border-radius: 50px;
+        }
+
+        .button1 {
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+
+        }
+        .img2 {
+
+            height: 50px;
+            width: 50px;
+          border-radius: 50px;
+        }
+
+        .button2 {
+           
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+        }
+         .img3 {
+
+            height: 50px;
+            width: 50px;
+           border-radius: 50px;
+        }
+
+        .button3 {
+          
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+        }
+
+        .player-side {
+            font-size: 15px;
+            color: rgb(182, 110, 16)
+        }
+        }
     </style>
 </head>
 
 <body>
-    
-        <div class="player">
-            <h1 class="player-side">PLAYER</h1>
-            <p>ROCK PAPER scissors</p>
-            <button class="button1" onclick="
+    <div class="player">
+        <h1 class="player-side">PLAYER</h1>
+        <p>ROCK PAPER scissors</p>
+        <button class="button1" onclick="
 
 play(`rock`);
 
@@ -178,21 +302,21 @@ play(`rock`);
 
 
 
-            <button class="button2" onclick="
+        <button class="button2" onclick="
 play(`paper`);
 
 
 "><img class="img2" src="img/download.jpeg"></button>
 
 
-            <button class="button3" onclick="
+        <button class="button3" onclick="
 
 play(`scissors`);
 "><img class="img3" src="img/scissors.webp"></button>
 
 
 
-            <button class="reset" onclick="
+        <button class="reset" onclick="
 
 res.win=0;
  res.loss=0;
@@ -200,43 +324,46 @@ res.tie=0;
 localStorage.removeItem(`res`);
 sshow();
 ">
-                RESET
+            RESET
+        </button>
+
+
+        <p class="preview">
+
+        </p>
+    </div>
+    <p class="resul">
+
+    </p>
+    <p class="show"></p>
+
+
+    </div>
+
+  
+
+        <div class="computer">
+            <h1 class="player-side">COMPUTER</h1>
+            <p>ROCK PAPER scissors</p>
+            <button class="button1"> <img class="img1" src="img/images (1).jpeg">
             </button>
 
 
-            <p class="preview">
+
+            <button class="button2">
+                <img class="img2" src="img/download.jpeg">
+            </button>
+
+
+            <button class="button3">
+                <img class="img3" src="img/scissors.webp">
+            </button>
+
+            <p class="preview-computer">
 
             </p>
         </div>
-        <p class="resul">
-
-        </p>
-        <p class="show"></p>
-
-
-    </div>
-
-    <div class="computer">
-        <h1 class="player-side">COMPUTER</h1>
-        <p>ROCK PAPER scissors</p>
-        <button class="button1"> <img class="img1" src="img/images (1).jpeg">
-        </button>
-
-
-
-        <button class="button2">
-            <img class="img2" src="img/download.jpeg">
-        </button>
-
-
-        <button class="button3">
-            <img class="img3" src="img/scissors.webp">
-        </button>
-
-        <p class="preview-computer">
-
-        </p>
-    </div>
+  
     <script>
         let res = JSON.parse(localStorage.getItem
             (`res`));
